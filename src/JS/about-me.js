@@ -3,7 +3,7 @@ import 'accordion-js/dist/accordion.min.css';
 
 
 
-new Accordion('.accordion-container', {
+new Accordion('.about-section', {
   duration: 400,
   showMultiple: true,
 });
