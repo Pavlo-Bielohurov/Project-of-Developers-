@@ -2,11 +2,12 @@ import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 
 
-
 new Accordion('.about-section', {
+
   duration: 400,
   showMultiple: true,
 });
+
 
 document.querySelectorAll('.ac-trigger').forEach(item => {
     item.addEventListener('click', event => {
