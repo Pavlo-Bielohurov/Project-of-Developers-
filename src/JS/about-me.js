@@ -8,11 +8,19 @@ new Accordion('.about-section', {
   showMultiple: true,
 });
 
+document.querySelectorAll('.ac-trigger').forEach(item => {
+    item.addEventListener('click', event => {
+        const aboutButton = event.currentTarget;
+        const aboutSvg = aboutButton.querySelector('.svg-about');
 
-// const accordion = document.querySelector('.ac-header');
-// accordion.forEach(el => {
-//   el.addEventListener('click', (event) => {
-//     let element = event.currenTarget
-//     console.log(element);
-//   })
-// });
+        // Проверяем, существует ли уже новый иконка
+        if (aboutSvg.innerHTML.includes('icon-to-down')) {
+            // Меняем обратно на исходную иконку
+            aboutSvg.innerHTML = '<use href="../Images/symbol-defs.svg#icon-to-up"></use>';
+        } else {
+            // Меняем на новую иконку
+            aboutSvg.innerHTML = '<use href="../Images/symbol-defs.svg#icon-to-down"></use>';
+        }
+    });
+});
+
