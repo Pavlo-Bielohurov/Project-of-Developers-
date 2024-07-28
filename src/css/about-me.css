@@ -1,6 +1,6 @@
 
 
-img {
+.about-me-img {
     display: block;
     max-width: 100%;
     height: auto;
@@ -72,7 +72,7 @@ img {
     content: "";
 }
 
-.accordion-container .ac-header .ac-trigger {
+.accordion-container .ac-header .avout-button {
     font-family: "Inter Tight",
         sans-serif;
     font-weight: 600;
@@ -108,7 +108,7 @@ img {
 
 }
 
-.accordion-container .ac .ac-header {
+.about-me .accordion-container .ac .ac-header-about{
     background-color: #1c1d20;
     height: 68px;
     display: flex;
@@ -121,13 +121,19 @@ img {
 .svg-about{
     fill: transparent;
     stroke: #fafafa;
-    margin: 7px;
-    border-radius: 100%;
-    border: 2px aqua solid;
+    display: block;
+    cursor: pointer;
+    border: 1px solid rgba(250, 250, 250, 0.2);
+    border-radius: 100px;
+    padding: 7px;
+    width: 34px;
+    height: 34px;
 }
 
 .accordion-container .ac{
     border: none;
+    border-top: 1px solid rgba(250, 250, 250, 0.2);
+    border-bottom: 1px solid rgba(250, 250, 250, 0.2);
 }
 
 .ac .ac-header .ac-trigger{
@@ -136,6 +142,15 @@ img {
     /* align-items: flex-end;
     flex-direction: column; */
 }
+
+@media (min-width: 320px) and (max-width: 374px){
+    .about-me{
+        max-width: 320px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+}
+
 
 @media screen and (min-width:768px){
     .about-me{
@@ -171,7 +186,7 @@ img {
  .about-conteiner-text{
     min-width: 680;
  }
- img {
+ .about-me-img{
     width: 704px;
  };
 }
