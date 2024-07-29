@@ -1,0 +1,46 @@
+.swiper-skills-upcontainer {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding-left: 64px;
+  padding-bottom: 164px;
+}
+
+.swiper-container-skills {
+  display: flex;
+  align-items: center;
+}
+
+.swiper-wrapper-skills {
+  display: flex;
+  overflow: hidden;
+}
+
+.swiper-slide-skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 10px;
+  background-color: #444;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+  transition: background-color 0.3s;
+}
+
+.swiper-slide-skills.active {
+  background-color: #ed3b44;
+}
+
+.swiper-button-next {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
