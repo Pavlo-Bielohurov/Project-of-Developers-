@@ -13,68 +13,75 @@ document.addEventListener('DOMContentLoaded', function () {
       initializeSwiper();
     })
     .catch(error => {
-      document.getElementById('error-message').innerText = error.message;
+      console.error('Error fetching reviews:', error);
+      // Optional: Handle the error display in the HTML
     });
 
   function renderReviews(reviews) {
-    const reviewsContainer = document.getElementById('reviews-container');
+    const reviewsContainer = document.querySelector('.reviews-list');
+    reviewsContainer.innerHTML = ''; // Clear previous content if any
+
     reviews.forEach(review => {
       const reviewElement = document.createElement('li');
-      reviewElement.classList.add('swiper-slide');
+      reviewElement.classList.add('swiper-slide', 'list-item');
       reviewElement.innerHTML = `
-        <img src="${review.avatar_url}" alt="${review.author}'s avatar" class="review-avatar" />
-        <div class="review-author">${review.author}</div>
-        <div class="review-text">${review.review}</div>
+        <img src="${review.avatar_url}" alt="${review.author}'s avatar" class="person-avatar" />
+        <p class="person-name">${review.author}</p>
+        <p class="person-review">${review.review}</p>
       `;
       reviewsContainer.appendChild(reviewElement);
     });
   }
 
   function initializeSwiper() {
-    new Swiper('.swiper-container', {
+    const swiperInstance = new Swiper('.swiper-container', {
       slidesPerView: 1,
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.btn-go-right',
+        prevEl: '.btn-go-left',
       },
       keyboard: {
         enabled: true,
         onlyInViewport: false,
       },
       breakpoints: {
-        // when window width is >= 768px
         768: {
           slidesPerView: 2,
         },
-        // when window width is >= 1440px
         1440: {
           slidesPerView: 4,
         },
       },
       on: {
         slideChangeTransitionEnd: function () {
-          // Enable/disable navigation buttons based on current slide
-          const swiper = this;
-          const { navigation } = swiper;
+          const { navigation } = this;
+          const prevButton = navigation.prevEl;
+          const nextButton = navigation.nextEl;
 
-          if (swiper.isBeginning) {
-            navigation.nextEl.classList.remove('swiper-button-disabled');
-            navigation.prevEl.classList.add('swiper-button-disabled');
-          } else if (swiper.isEnd) {
-            navigation.prevEl.classList.remove('swiper-button-disabled');
-            navigation.nextEl.classList.add('swiper-button-disabled');
-          } else {
-            navigation.nextEl.classList.remove('swiper-button-disabled');
-            navigation.prevEl.classList.remove('swiper-button-disabled');
+          if (prevButton && nextButton) {
+            if (this.isBeginning) {
+              prevButton.classList.add('disabled');
+              nextButton.classList.remove('disabled');
+            } else if (this.isEnd) {
+              prevButton.classList.remove('disabled');
+              nextButton.classList.add('disabled');
+            } else {
+              prevButton.classList.remove('disabled');
+              nextButton.classList.remove('disabled');
+            }
           }
         },
         reachBeginning: function () {
           const { navigation } = this;
-          navigation.prevEl.classList.add('swiper-button-disabled');
+          if (navigation.prevEl) {
+            navigation.prevEl.classList.add('disabled');
+          }
         },
         reachEnd: function () {
           const { navigation } = this;
-          navigation.nextEl.classList.add('swiper-button-disabled');
+          if (navigation.nextEl) {
+            navigation.nextEl.classList.add('disabled');
+          }
         },
       },
     });
