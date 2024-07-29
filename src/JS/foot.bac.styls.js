@@ -1,8 +1,8 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-import caution from '../img/footer/bi_exclamation-triangle.png';
-import iconOctagon from '../img/footer/bi_x-octagon.png';
+import caution from '../Images/work/bi_exclamation-triangle.png';
+import iconOctagon from '../Images/work/bi_x-octagon.png';
 
 function infoNotify() {
   return iziToast.info({
