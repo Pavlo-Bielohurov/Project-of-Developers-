@@ -17,10 +17,10 @@ document.querySelectorAll('.ac-trigger').forEach(item => {
         // Проверяем, существует ли уже новый иконка
         if (aboutSvg.innerHTML.includes('icon-to-down')) {
             // Меняем обратно на исходную иконку
-            aboutSvg.innerHTML = '<use href="../Images/symbol-defs.svg#icon-to-up"></use>';
+            aboutSvg.innerHTML = '<use href="./Images/symbol-defs.svg#icon-to-up"></use>';
         } else {
             // Меняем на новую иконку
-            aboutSvg.innerHTML = '<use href="../Images/symbol-defs.svg#icon-to-down"></use>';
+            aboutSvg.innerHTML = '<use href="./Images/symbol-defs.svg#icon-to-down"></use>';
         }
     });
 });
