@@ -1,0 +1,114 @@
+/* ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+} */
+.reviews-div {
+  background-color: #1c1d20;
+  padding: 64px 16px;
+}
+.reviews-title {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 250, 0.4);
+  padding-bottom: 32px;
+}
+.swiper-container {
+  width: 344px;
+  height: 386px;
+  margin: 32px 24px;
+}
+.swiper-button-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.error-message {
+  color: red;
+  text-align: center;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #242527;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 20px;
+  padding: 32px 24px;
+  width: 343px;
+  height: 302px;
+}
+.review-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 25%;
+  margin-bottom: 10px;
+}
+.review-author {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+  padding-bottom: 8px;
+}
+.review-text {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 250, 0.6);
+}
+
+/* _______________________________ */
+
+.reviews-div {
+  background-color: #1c1d20;
+}
+.swiper-slide {
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 20px;
+  padding: 32px 24px;
+  width: 332px;
+  height: 302px;
+  /* :root {
+    --background: #1c1d20;
+    --cards: #242527;
+    --arrow: #3b3b3b;
+    --button-text: #ed3b44;
+    --main-text: #fafafa;
+  } */
+}
+@media screen and (min-width: 375px) {
+  .container {
+    max-width: 375px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    min-width: 1440px;
+    padding: 0 100px;
+  }
+}
