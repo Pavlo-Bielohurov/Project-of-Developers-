@@ -1,110 +1,69 @@
-const formData = {
-  email: '',
-  comments: '',
+import axios from 'axios';
 
-  setFormValue(newemail, newcomments) {
-    this.email = newemail;
-    this.comments = newcomments;
-  },
-};
+const URL = 'https://portfolio-js.b.goit.study/api';
+axios.defaults.baseURL = URL;
 
-const formMessage = document.querySelector('.footer-clients_data');
-const STORAGE_KEY = 'feedback-form-state';
-formMessage.addEventListener('input', inputText);
-formMessage.addEventListener('send', onSubmit);
-
-function getValueOfLocalstorage() {
-  const localdata = JSON.parse(localStorage.getItem(STORAGE_KEY));
-  if (localdata !== null) {
-    formData.setFormValue(localdata.email, localdata.comments);
-    formMessage.email.value = formData.email;
-    formMessage.message.value = formData.comments;
-  }
+export async function makePost(user) {
+  const { data, status, statusText } = await axios.post('/requests', user);
+  return { data, status, statusText };
 }
 
-function inputText(event) {
-  const eventName = event.target;
-  switch (eventName.nodeName) {
-    case 'INPUT':
-      formData.email = eventName.value.trim();
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
-      break;
-    case 'TEXTAREA':
-      formData.comments = eventName.value.trim();
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
-      break;
-  }
-}
 
-function onSubmit(event) {
-  event.preventDefault();
-  if (formData.email === '' || formData.comments === '') {
-    return alert('Fill please all fields');
-  }
-  console.table(formData);
-  localStorage.removeItem(STORAGE_KEY);
-  formMessage.reset();
-}
-getValueOfLocalstorage();
-
-(() => {
-  const refs = {
-    openModalBtn: document.querySelector('.modal-open'),
-    closeModalBtn: document.querySelector('.modal-close'),
-    modal: document.querySelector('.foot-modal'),
+const refs = {
+    form: document.querySelector('.js-footer-form'),
+    spinner: document.querySelector('.js-loader-footer'),
+    btnFooter: document.querySelector('.js-btn-footer'),
   };
 
-  refs.openModalBtn.addEventListener('click', toggleModal);
-  refs.closeModalBtn.addEventListener('click', toggleModal);
-
-  function toggleModal() {
-    refs.modal.classList.toggle('is-hidden');
-  }
-})();
-
-const modalOpens = document.querySelector('.modal-open');
-const body = document.querySelector('body');
-const lockPadding = document.querySelector('');
-
-let unlock = true;
-
-const timeout = 800;
-
-if (modalOpens.length > 0) {
-  for (let index = 0; index < modalOpens; index++) {
-    const modalOpen = modalOpen[index];
-    modalOpen.addEventListener('click', function (e) {
-      const popupName = modalOpen.qetAttribute('href');
-      const curentModal = document.getElementById(popupName);
-      modalOpen(curentModal);
-      e.preventDefault();
-    });
-  }
-}
-const modalCloseIcon = document.querySelectorAll('.footer-modal-close');
-if (modalCloseIcon.length > 0) {
-  for (let index = 0; index < modalCloseIcon.length; index++) {
-    const el = modalCloseIcon[index];
-    el.addEventListener('click', function (e) {
-      modalClose(el.closest('.modal-close'));
-      e.preventDefault();
-    });
-  }
+function hideSpinner() {
+  refs.spinner.classList.add('is-hidden');
+  refs.btnFooter.classList.remove('is-hidden');
 }
 
-function modalOpen(curentModal) {
-  if (curentModal && unlock) {
-    const modalActive = document.querySelector('.modal .open');
-    if (modalActive) {
-      modalClose(modalActive, false);
-    } else {
-      bodyLock();
-    }
-    curentModal.classList.add('open');
-    curentModal.addEventListener('click', function (e) {
-      if (!e.target.closest('.foot-modal-content')) {
-        modalClose(e.target.closest('.foot-modal'));
-      }
-    });
-  }
+function showSpinner() {
+  refs.spinner.classList.remove('is-hidden');
+  refs.btnFooter.classList.add('is-hidden');
 }
+
+export { hideSpinner, showSpinner };
+
+import {
+  addInlineInfoNotifyStyle,
+  emptyNofify,
+  errorNotify,
+  infoNotify,
+} from './foot.bac.styls';
+
+export function handlerPost(evt) {
+  evt.preventDefault();
+
+  const { emailContact, comment } = evt.target.elements;
+  const emailValue = emailContact.value.trim();
+  const commentValue = comment.value.trim();
+
+  if (!commentValue) {
+    emptyNofify();
+    return;
+  }
+
+  showSpinner();
+
+  makePost({ email: emailValue, comment: commentValue })
+    .then(() => {
+      infoNotify();
+      addInlineInfoNotifyStyle();
+
+      evt.target.reset();
+    })
+    .catch(() => {
+      errorNotify();
+      return;
+    })
+    .finally(() => {
+      hideSpinner();
+    });
+}
+
+refs.form.addEventListener('submit', handlerPost);
+
+refs.spinner.classList.add('is-hidden');
