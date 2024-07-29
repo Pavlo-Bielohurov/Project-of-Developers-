@@ -44,6 +44,9 @@
   background-size: cover;
   position: fixed;
   top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
   padding-top: 32px;
   padding-bottom: 64px;
   padding-left: 16px;
@@ -52,6 +55,11 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.menu.show {
+  transform: translateX(0);
+}
+
 @media screen and (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .menu {
     background: url(/Images/hero/background-mobile-menu-x2.png) no-repeat center
@@ -63,10 +71,10 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  align-self: flex-end;
-  /* position: absolute;
-  top: 16px;
-  right: 16px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
 }
 .close-menu {
   fill: transparent;
@@ -79,6 +87,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin-right: 16px;
 }
 .menu-list {
   display: flex;
@@ -112,6 +121,16 @@
   display: none;
 }
 .tablet-nav {
+  display: none;
+}
+
+/* JSJSJSJSJSJSJSJSJ */
+
+.show {
+  display: block;
+}
+
+.hide {
   display: none;
 }
 
