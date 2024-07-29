@@ -1,1 +1,54 @@
-
+<header class="header">
+  <div class="container header-container">
+    <a href="#">
+      <div class="logo">
+        <img
+          class="logo-img"
+          src="./Images/hero/logo-image.png"
+          srcset="
+            ./Images/hero/logo-image.png    1x,
+            ./Images/hero/logo-image-x2.png 2x
+          "
+          alt="logo"
+          width="80"
+        />
+        <p class="logo-text">jefferson*</p>
+      </div>
+    </a>
+    <button class="open-menu-btn">
+      <svg class="open-menu" width="28" height="28">
+        <use href="./Images/symbol-defs.svg#icon-open"></use>
+      </svg>
+    </button>
+    <nav class="tablet-nav">
+      <button class="menu-header">Menu</button>
+      <ul id="menu-list" class="hide">
+        <li class="menu-list-item"><a href="#about-me-section">About me</a></li>
+        <li class="menu-list-item"><a href="#benefits">Benefits</a></li>
+        <li class="menu-list-item"><a href="#project">Projects</a></li>
+        <li class="menu-list-item"><a href="#">FAQ</a></li>
+      </ul>
+    </nav>
+    <a class="button-order-link button-order-js" href="#work-together"
+      ><button class="button-oder button-tablet">Order the project</button></a
+    >
+  </div>
+  <div class="menu">
+    <button class="close-menu-btn">
+      <svg class="close-menu" width="28" height="28">
+        <use href="./Images/symbol-defs.svg#icon-close"></use>
+      </svg>
+    </button>
+    <nav class="nav">
+      <ul class="menu-list menu-list-js">
+        <li class="menu-list-item"><a href="#about-me-section">About me</a></li>
+        <li class="menu-list-item"><a href="#benefits">Benefits</a></li>
+        <li class="menu-list-item"><a href="#project">Projects</a></li>
+        <li class="menu-list-item"><a href="#">FAQ</a></li>
+      </ul>
+      <a href="#work-together" class="button-order-js"
+        ><button class="button-oder">Order the project</button></a
+      >
+    </nav>
+  </div>
+</header>

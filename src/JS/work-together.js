@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 
 const URL = 'https://portfolio-js.b.goit.study/api';
