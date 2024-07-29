@@ -176,6 +176,10 @@
 
     
 }
+/*  */
+
+
+/*  */
 
 @media (min-width: 320px) and (max-width: 374px){
     .about-me{
@@ -220,12 +224,11 @@
 
 }
 
-@media screen and (min-width: 1140px) {
+@media screen and (min-width: 1440px) {
   .about-me {
     padding: 96px 32px 96px 32px;
 
-   
- }
+   }
  .about-me-conteiner{
   flex-direction: row;  
   min-width: 1140px; 
@@ -251,5 +254,10 @@
     padding: 8px 68px 32px 600px ;
  }
  
+ .about-img{
+    width: 680px;
+    height: 700px;
+ }
+
 }
 
