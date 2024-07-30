@@ -57,10 +57,6 @@
   fill: transparent;
 }
 
-.aboutme-icon-swiper:hover,
-.aboutme-icon-swiper:focus {
-}
-
 @media screen and (min-width: 768px) {
   /* .about-container-swiper {
     margin-top: 64px;
@@ -74,10 +70,6 @@
   .aboutme-skills-item.swiper-slide {
     height: 200px;
     width: 200px;
-  }
-
-  .aboutme-skills {
-    padding-bottom: var(--mb-big);
   }
 
   .aboutme-skills-item {
@@ -104,9 +96,6 @@
   .about-me-swiper {
     width: 1232px;
     padding-left: 32px;
-  }
-
-  .aboutme-skills {
   }
 
   .swiper-button-wrap {
