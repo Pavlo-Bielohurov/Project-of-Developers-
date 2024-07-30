@@ -1,6 +1,6 @@
 .about-container-swiper {
-  margin-top: 32px;
   display: flex;
+  margin-bottom: 164px;
 }
 
 .about-me-swiper {
@@ -10,21 +10,17 @@
   width: 260px;
   margin: 0;
   overflow: hidden;
-  transition: transform background-color 0.3s;
 }
-
-.aboutme-skills-list.swiper-wrapper {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.aboutme-skills-list {
+  display: flex;
 }
-
 .aboutme-skills-item.swiper-slide {
   width: 130px;
   height: 130px;
   border: 1px solid #444;
   display: flex;
   justify-content: center;
+
   align-items: center;
   border-radius: 50%;
   text-align: center;
@@ -43,36 +39,32 @@
 
 .swiper-button-wrap {
   width: 28px;
-  margin-left: 55px;
+  /* margin-left: 55px; */
   display: flex;
   align-items: center;
 }
 
 .aboutme-swiper-btn {
-  display: block;
+  display: block !important;
   width: 28px;
   height: 28px;
   border: none;
   background-color: transparent;
-  transition: transform var(--trns);
 }
 
-.aboutme-swiper-btn svg {
-  fill: #3b3b3b;
-  width: 100%;
-  height: 100%;
-  transition: fill var(--trns);
+.aboutme-icon-swiper {
+  stroke: #444;
+  fill: transparent;
 }
 
-.aboutme-swiper-btn:hover svg,
-.aboutme-swiper-btn:focus svg {
-  fill: #3b3b3b;
+.aboutme-icon-swiper:hover,
+.aboutme-icon-swiper:focus {
 }
 
 @media screen and (min-width: 768px) {
-  .about-container-swiper {
+  /* .about-container-swiper {
     margin-top: 64px;
-  }
+  } */
 
   .about-me-swiper {
     height: 200px;
@@ -81,6 +73,7 @@
 
   .aboutme-skills-item.swiper-slide {
     height: 200px;
+    width: 200px;
   }
 
   .aboutme-skills {
@@ -108,17 +101,12 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .about-container-swiper {
-    margin-top: 96px;
-  }
-
   .about-me-swiper {
     width: 1232px;
     padding-left: 32px;
   }
 
   .aboutme-skills {
-    padding-bottom: var(--mb-huge);
   }
 
   .swiper-button-wrap {

@@ -1,3 +1,6 @@
+import Swiper from 'swiper';
+import { Keyboard, Navigation } from 'swiper/modules';
+
 const swiper = new Swiper('.about-me-swiper', {
   modules: [Navigation, Keyboard],
   navigation: {
