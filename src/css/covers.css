@@ -61,8 +61,6 @@
     }
 } */
 
-
-
 /* .cover {
     min-width: 320px;
     height: 100vh;
@@ -128,80 +126,80 @@
     }
 } */
 
-
 .cover {
-    backdrop-filter: blur(30px);
-    background: url('../Images/cover-back/elements123-min.png') no-repeat center center fixed;
+  backdrop-filter: blur(30px);
+  background: url('../Images/cover-back/elements123-min.png') no-repeat center
+    center fixed;
 
-    min-width: 320px;
-    height: 100vh;
-    position: relative;
-    /* Добавлено */
-    overflow: hidden;
-    /* Добавлено */
+  min-width: 320px;
+  height: 100vh;
+  position: relative;
+  /* Добавлено */
+  overflow: hidden;
+  /* Добавлено */
 }
 
 .cover-list {
-    position: absolute;
-    /* Изменено */
-    right: 0;
-    /* Изменено */
-    left: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+  position: absolute;
+  /* Изменено */
+  right: 0;
+  /* Изменено */
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
 }
 
 .cover-list-item {
-    position: relative;
-    /* Добавлено */
-    transform: rotate(12deg);
-    display: flex;
-    gap: 24px;
-    overflow: hidden;
-    /* Добавлено */
+  position: relative;
+  /* Добавлено */
+  transform: rotate(10deg);
+  display: flex;
+  gap: 36px;
+  /* overflow: hidden; */
+  /* Добавлено */
 }
 
 .cover-item-img {
-    width: 282px;
-    flex-shrink: 0;
-    white-space: nowrap;
-    animation-name: marqueeLine;
-    animation-duration: 5s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    box-sizing: border-box;
-    /* Добавлено */
+  width: 282px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  animation-name: marqueeLine;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  box-sizing: border-box;
+  /* Добавлено */
 }
 
 @keyframes marqueeLine {
-    from {
-        transform: translateX(-20%);
-    }
+  from {
+    transform: translateX(-20%);
+  }
 
-    to {
-        transform: translateX(-180%);
-    }
+  to {
+    transform: translateX(-180%);
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .cover-item-img {
-        width: 544px;
-    }
+  .cover-item-img {
+    width: 544px;
+  }
 
-    .cover {
-        height: 960px;
-    }
+  .cover {
+    height: 960px;
+  }
 
-    .cover-list-item {
-        height: 100%;
-    }
+  .cover-list-item {
+    height: 100%;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    .cover {
-        /* backdrop-filter: blur(30px);
+  .cover {
+    /* backdrop-filter: blur(30px);
         background: url('./Images/cover-back/elements_vectors-min.png') no-repeat center center fixed; */
-    }
+  }
 }
