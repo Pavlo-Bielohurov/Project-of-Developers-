@@ -1,6 +1,7 @@
 .reviews-section {
-  padding-top: 32px;
-  padding-bottom: 32px;
+  /* padding-top: 32px; */
+  /* padding-bottom: 32px; */
+  padding: 32px;
   background-color: #1c1d20;
 }
 
@@ -26,11 +27,6 @@
 .swiper-wrapper {
   display: flex;
 }
-
-/* .reviews-list {
-  display: flex;
-  gap: 16px;
-} */
 
 .list-item {
   border: 1px solid rgba(250, 250, 250, 0.2);
