@@ -170,6 +170,13 @@
   }
 }
 
+@media screen and (min-width: 1440px) {
+  header .container {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}
+
 /* ----------------------------------tablet and desktop ---------------------------*/
 .menu-header {
   background: transparent;

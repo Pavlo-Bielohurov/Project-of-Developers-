@@ -43,13 +43,13 @@
   border: 1px solid rgba(250, 250, 250, 0.2);
   border-radius: 50px;
   text-align: center;
-  transition: transform 0.7s ease, color 0.5s ease;
+  transition: color 0.5s ease;
 }
 
 .socail-link:hover,
 .socail-link-email:hover {
   color: #f0585f;
-  transform: scale(1.03);
+  border: 1px solid rgba(250, 250, 250, 0.836);
 }
 
 .socail-link-email {
@@ -142,12 +142,19 @@
 
 @media screen and (min-width: 1440px) {
   .container {
-    padding: 0 32px;
-    max-width: 4480px;
+    /* padding: 0 32px; */
+    /* max-width: 4480px; */
   }
   .title {
     display: block;
     margin: 0 auto;
+  }
+
+  .hero .container {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+  .hero-container {
   }
 }
 
