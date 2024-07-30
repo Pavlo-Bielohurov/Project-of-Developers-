@@ -1,50 +1,50 @@
-// let swiper = new Swiper('.mySwiper', {
-//   navigation: {
-//     nextEl: '.projects-swiper-button-next',
-//     prevEl: '.projects-swiper-button-prev',
-//   },
-// });
-const swiper = new Swiper('.mySwiper', {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  navigation: {
-    nextEl: '.projects-swiper-button-next',
-    prevEl: '.projects-swiper-button-prev',
-  },
-  keyboard: {
-    enabled: true,
-    onlyInViewport: false,
-  },
-  on: {
-    init: function () {
-      this.slides[0].style.opacity = 1;
-      this.slides[0].style.visibility = 'visible';
+document.addEventListener('DOMContentLoaded', function () {
+  const swiper = new Swiper('.mySwiper', {
+    direction: 'horizontal',
+    loop: false,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.projects-swiper-button-next',
+      prevEl: '.projects-swiper-button-prev',
     },
-    slideChangeTransitionEnd: function () {
-      this.slides.forEach(slide => {
-        slide.style.opacity = 0;
-        slide.style.visibility = 'hidden';
-      });
-      this.slides[this.activeIndex].style.opacity = 1;
-      this.slides[this.activeIndex].style.visibility = 'visible';
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
     },
-    reachBeginning: function () {
-      document
-        .querySelector('.projects-swiper-button-prev')
-        .classList.add('swiper-button-disabled');
+    on: {
+      slideChange: function () {
+        const prevButton = document.querySelector(
+          '.projects-swiper-button-prev'
+        );
+        const nextButton = document.querySelector(
+          '.projects-swiper-button-next'
+        );
+
+        if (this.isBeginning) {
+          prevButton.classList.add('disabled');
+        } else {
+          prevButton.classList.remove('disabled');
+        }
+
+        if (this.isEnd) {
+          nextButton.classList.add('disabled');
+        } else {
+          nextButton.classList.remove('disabled');
+        }
+      },
     },
-    reachEnd: function () {
-      document
-        .querySelector('.projects-swiper-button-next')
-        .classList.add('swiper-button-disabled');
-    },
-    fromEdge: function () {
-      document
-        .querySelector('.projects-swiper-button-next')
-        .classList.remove('swiper-button-disabled');
-      document
-        .querySelector('.projects-swiper-button-prev')
-        .classList.remove('swiper-button-disabled');
-    },
-  },
+  });
+
+  // Initial state check
+  const prevButton = document.querySelector('.projects-swiper-button-prev');
+  const nextButton = document.querySelector('.projects-swiper-button-next');
+
+  if (swiper.isBeginning) {
+    prevButton.classList.add('disabled');
+  }
+
+  if (swiper.isEnd) {
+    nextButton.classList.add('disabled');
+  }
 });
