@@ -1,6 +1,6 @@
 <footer id="work-together" class="footer">
-    <div class="container">
-      <h2 class="footer-title">
+  <div class="container footer-div">
+    <h2 class="footer-title">
       <picture>
         <source
           srcset="./Images/work/logo@1x.webp 1x, ./Images/work/logo@2x.webp 2x"
@@ -9,16 +9,29 @@
           srcset="./Images/work/logo@1x.webp 1x, ./Images/work/logo@2x.webp 2x"
           media="(min-width: 768px)" />
         <source
-          srcset="./Images/work/mob-logo@1x.webp 1x, ./Images/work/mob-logo@2x.webp  2x"
+          srcset="
+            ./Images/work/mob-logo@1x.webp 1x,
+            ./Images/work/mob-logo@2x.webp 2x
+          "
           media="(min-width: 375px)" />
         <source
-          srcset="./Images/work/mob-logo@1x.webp 1x, ./Images/work/mob-logo@2x.webp  2x"
+          srcset="
+            ./Images/work/mob-logo@1x.webp 1x,
+            ./Images/work/mob-logo@2x.webp 2x
+          "
           media="(max-width: 375px)" />
-        <img loading="lazy" src="./Images/work/mob-logo@1x.webp" alt="logo" /></picture
+        <img
+          loading="lazy"
+          src="./Images/work/mob-logo@1x.webp"
+          alt="logo" /></picture
       >Let’s <span class="footer-accent-text">work</span>together
     </h2>
-  
-    <form class="js-footer-form footer-contacts-form" name="contact-us" autocomplete="off">
+
+    <form
+      class="js-footer-form footer-contacts-form"
+      name="contact-us"
+      autocomplete="off"
+    >
       <div class="contacts-form-field">
         <input
           type="email"
@@ -29,7 +42,9 @@
           required
           placeholder=" "
           pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
-        /><label for="email" class="contacts-form-label"> clients@gmail.com</label>
+        /><label for="email" class="contacts-form-label">
+          clients@gmail.com</label
+        >
         <span class="valid-notify">Succes!</span>
         <span class="invalid-notify">Invalid email, try again</span>
       </div>
@@ -42,11 +57,15 @@
           placeholder="Text us"
           required
         ></textarea>
-        <label for="Comment" class="contacts-form-label textarea">comments</label>
+        <label for="Comment" class="contacts-form-label textarea"
+          >comments</label
+        >
       </div>
 
       <div class="spinner-wrap">
-        <button class="contacts-form-btn js-btn-footer" type="submit">Send</button>
+        <button class="contacts-form-btn js-btn-footer" type="submit">
+          Send
+        </button>
         <div class="loader js-loader-footer"></div>
       </div>
     </form>
@@ -54,11 +73,13 @@
     <ul class="footer-contacts-list">
       <li class="footer-contacts-item">
         <a href="mailto:lloydjefferson@gmail.com" class="footer-contacts-link"
-        >lloydjefferson@gmail.com</a
+          >lloydjefferson@gmail.com</a
         >
       </li>
       <li class="footer-contacts-item">
-        <a href="tel:+3801111111111" class="footer-contacts-link">+380 11 1111 11 11</a>
+        <a href="tel:+3801111111111" class="footer-contacts-link"
+          >+380 11 1111 11 11</a
+        >
       </li>
     </ul>
   </div>

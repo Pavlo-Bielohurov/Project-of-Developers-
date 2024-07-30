@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const apiUrl = 'https://portfolio-js.b.goit.study/api/reviews'; // Правильний URL вашого сервера
+  const apiUrl = 'https://portfolio-js.b.goit.study/api/reviews'; 
 
   fetch(apiUrl)
     .then(response => {
