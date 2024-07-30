@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const slideWidth = slides[0].clientWidth + 20; // slide width + margin
     const offset = -currentIndex * slideWidth;
-    swiperWrapper.style.transform = `translateX(${offset}px)`;
+    swiperWrapper.style.transform = translateX(${offset}px);
   }
 
   nextButton.addEventListener('click', () => {

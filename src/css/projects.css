@@ -8,6 +8,21 @@ body {
   max-width: 320px;
   padding: 0 20px;
   margin: 0 auto;
+  height: 100%;
+}
+
+.swiper-container {
+  overflow: hidden;
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+
+.swiper-wrapper {
+  border-radius: 24px;
+  width: 343px;
+  height: 812px;
+  gap: 10px;
 }
 
 .projects-main-title {
@@ -22,8 +37,7 @@ body {
 }
 
 .projects-list {
-  width: 100%;
-  height: auto;
+  overflow: hidden;
 }
 
 .first-panel {
@@ -33,12 +47,14 @@ body {
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
 }
+
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 96px;
 }
+
 .tag {
   border: 1px solid rgba(28, 29, 32, 0.2);
   border-radius: 60px;
@@ -53,6 +69,7 @@ body {
   align-items: center;
   white-space: nowrap;
 }
+
 .projects-title {
   font-family: var(--font-family);
   font-weight: 500;
@@ -77,6 +94,7 @@ body {
   letter-spacing: -0.02em;
   color: #fafafa;
 }
+
 .second-panel {
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
@@ -94,45 +112,28 @@ body {
   height: 195px;
   border-radius: 0px;
 }
-
-.projects-nav-buttons {
-  margin-top: 32px;
+.swiper-slide-projects {
   display: flex;
   justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 12px;
+  align-items: center;
+  flex-direction: column;
 }
 
-.projects-nav-buttons button {
-  background-color: #333;
-  color: white;
+.btn-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn {
+  background: none;
   border: none;
-  padding: 10px 20px;
-  margin: 0, auto;
-  border-radius: 50%;
   cursor: pointer;
-  font-size: 18px;
 }
 
-.projects-nav-buttons button:hover {
-  background-color: #555;
-}
-
-.projects-swiper-button-next {
-  border: 1px solid rgba(250, 250, 250, 0.5);
-  border-radius: 60px;
-  padding: 14px;
-  width: 52px;
-  height: 52px;
-}
-
-.projects-swiper-button-prev {
-  border: 1px solid rgba(250, 250, 250, 0.5);
-  border-radius: 60px;
-  padding: 14px;
-  width: 52px;
-  height: 52px;
+.btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 @media screen and (min-width: 375px) {
@@ -149,6 +150,7 @@ body {
 
   .first-panel {
     padding: 64px;
+    max-width: 704px;
   }
 
   .tags {
@@ -159,6 +161,18 @@ body {
     font-size: 44px;
     width: 494px;
     line-height: 100%;
+  }
+
+  .projects-list {
+    overflow: hidden;
+    max-width: 704px;
+    height: 1191px;
+  }
+
+  .projects-slide {
+    border-radius: 24px;
+    max-width: 704px !important;
+    height: 1191px;
   }
 
   .projects-link {
@@ -199,11 +213,17 @@ body {
   .tags {
     margin-bottom: 223px;
   }
+  .projects-slide {
+    border-radius: 24px;
 
+    max-width: 1376px;
+    height: 625px;
+  }
   .projects-title {
     font-size: 44px;
     width: 494px;
   }
+
   .swiper-slide {
     display: flex;
     flex-direction: row;

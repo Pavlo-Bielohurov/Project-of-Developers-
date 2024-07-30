@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const apiUrl = 'https://portfolio-js.b.goit.study/api/reviews'; // Правильний URL вашого сервера
+  const apiUrl = 'https://portfolio-js.b.goit.study/api/reviews';
 
   fetch(apiUrl)
     .then(response => {
@@ -44,12 +44,19 @@ document.addEventListener('DOMContentLoaded', function () {
         enabled: true,
         onlyInViewport: false,
       },
+      autoplay: {
+        delay: 2000, // Затримка між автоматичними переходами (в мілісекундах)
+        disableOnInteraction: false, // Чи зупиняти автоплей при взаємодії користувача з слайдером
+      },
+
       breakpoints: {
         768: {
           slidesPerView: 2,
+          spaceBetween: 16,
         },
         1440: {
           slidesPerView: 4,
+          spaceBetween: 16,
         },
       },
       on: {

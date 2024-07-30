@@ -1,41 +1,73 @@
-<link rel="stylesheet" href="../css/styles.css" />
-
 <footer id="work-together" class="footer">
-  <div class="container">
+  <div class="container footer-div">
     <h2 class="footer-title">
-      <img src="./Images/work/image.png" alt="logo" />Let’s
-      <span class="footer-accent-text">work</span>together
+      <picture>
+        <source
+          srcset="./Images/work/logo@1x.webp 1x, ./Images/work/logo@2x.webp 2x"
+          media="(min-width: 1440px)" />
+        <source
+          srcset="./Images/work/logo@1x.webp 1x, ./Images/work/logo@2x.webp 2x"
+          media="(min-width: 768px)" />
+        <source
+          srcset="
+            ./Images/work/mob-logo@1x.webp 1x,
+            ./Images/work/mob-logo@2x.webp 2x
+          "
+          media="(min-width: 375px)" />
+        <source
+          srcset="
+            ./Images/work/mob-logo@1x.webp 1x,
+            ./Images/work/mob-logo@2x.webp 2x
+          "
+          media="(max-width: 375px)" />
+        <img
+          loading="lazy"
+          src="./Images/work/mob-logo@1x.webp"
+          alt="logo" /></picture
+      >Let’s <span class="footer-accent-text">work</span>together
     </h2>
 
-    <form class="footer-contacts-form" name="contact-us" autocomplete="off">
+    <form
+      class="js-footer-form footer-contacts-form"
+      name="contact-us"
+      autocomplete="off"
+    >
       <div class="contacts-form-field">
         <input
           type="email"
-          name="email-contact"
+          name="emailContact"
           class="contacts-form-inp input"
           id="email"
           autocomplete="on"
           required
           placeholder=" "
-        />
-        <label for="email" class="contacts-form-label">clients@gmail.com</label>
+          pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+        /><label for="email" class="contacts-form-label">
+          clients@gmail.com</label
+        >
         <span class="valid-notify">Succes!</span>
         <span class="invalid-notify">Invalid email, try again</span>
       </div>
 
       <div class="contacts-form-field">
         <textarea
-          name="Comment"
+          name="comment"
           id="Comment"
           class="contacts-form-inp contacts-form-textarea"
-          placeholder=" "
+          placeholder="Text us"
+          required
         ></textarea>
         <label for="Comment" class="contacts-form-label textarea"
           >comments</label
         >
       </div>
 
-      <button class="contacts-form-btn" type="submit">Send</button>
+      <div class="spinner-wrap">
+        <button class="contacts-form-btn js-btn-footer" type="submit">
+          Send
+        </button>
+        <div class="loader js-loader-footer"></div>
+      </div>
     </form>
 
     <ul class="footer-contacts-list">
