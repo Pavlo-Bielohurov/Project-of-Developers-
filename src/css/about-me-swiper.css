@@ -56,3 +56,49 @@
   stroke: #444;
   fill: transparent;
 }
+
+@media screen and (min-width: 768px) {
+  /* .about-container-swiper {
+    margin-top: 64px;
+  } */
+
+  .about-me-swiper {
+    height: 200px;
+    width: 600px;
+  }
+
+  .aboutme-skills-item.swiper-slide {
+    height: 200px;
+    width: 200px;
+  }
+
+  .aboutme-skills-item {
+    width: 200px;
+    height: 200px;
+  }
+
+  .aboutme-skills-text {
+    font-size: 20px;
+  }
+
+  .swiper-button-wrap {
+    width: 40px;
+    margin-left: 64px;
+  }
+
+  .aboutme-swiper-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .about-me-swiper {
+    width: 1232px;
+    padding-left: 32px;
+  }
+
+  .swiper-button-wrap {
+    margin-left: 72px;
+  }
+}
