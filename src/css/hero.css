@@ -149,13 +149,6 @@
     display: block;
     margin: 0 auto;
   }
-
-  .hero .container {
-    padding-left: 64px;
-    padding-right: 64px;
-  }
-  .hero-container {
-  }
 }
 
 /* Медиазапрос для ретины и устройств с высоким разрешением */
