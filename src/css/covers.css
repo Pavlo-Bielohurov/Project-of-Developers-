@@ -134,16 +134,12 @@
   min-width: 320px;
   height: 100vh;
   position: relative;
-  /* Добавлено */
   overflow: hidden;
-  /* Добавлено */
 }
 
 .cover-list {
   position: absolute;
-  /* Изменено */
   right: 0;
-  /* Изменено */
   left: 0;
   overflow: hidden;
   display: flex;
@@ -153,12 +149,9 @@
 
 .cover-list-item {
   position: relative;
-  /* Добавлено */
   transform: rotate(10deg);
   display: flex;
   gap: 36px;
-  /* overflow: hidden; */
-  /* Добавлено */
 }
 
 .cover-item-img {
@@ -170,7 +163,6 @@
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   box-sizing: border-box;
-  /* Добавлено */
 }
 
 @keyframes marqueeLine {
@@ -198,8 +190,10 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .cover {
-    /* backdrop-filter: blur(30px);
-        background: url('./Images/cover-back/elements_vectors-min.png') no-repeat center center fixed; */
+  .cover-list {
+    width: 1440px;
+  }
+  .cover-container {
+    margin: 0 auto;
   }
 }
