@@ -134,7 +134,9 @@
   width: 164px;
   height: 45px;
   background-color: #ed3b44;
-  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button-order-link {
@@ -163,7 +165,9 @@
   }
 
   .button-order-link {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .tablet-nav {
     display: block;
