@@ -43,7 +43,7 @@
 
 .footer-accent-text {
   margin-left: 2px;
-  color: #ed3b44 /*var(--akcent-collor)*/;
+  color: #ed3b44;
 }
 @media screen and (max-width: 374px) {
   .footer-contacts-list {
@@ -308,10 +308,6 @@
   background-color: #d8797e;
 }
 
-/*.footer-contacts-item {
-
-  } */
-
 .footer-contacts-link {
   margin-right: 2px;
   display: block;
@@ -320,6 +316,12 @@
   border: 1px solid rgba(250, 250, 250, 0.2);
   border-radius: 60px;
   color: #fafafa;
+  transition: color 0.5s ease;
+}
+
+.footer-contacts-link:hover {
+  color: #f0585f;
+  border: 1px solid rgba(250, 250, 250, 0.836);
 }
 
 @media screen and (min-width: 768px) {
