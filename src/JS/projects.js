@@ -12,12 +12,4 @@ const swiper = new Swiper('.mySwiper', {
     enabled: true,
     onlyInViewport: true,
   },
-  on: {
-    init: function () {
-      updateNavigationButtons(this);
-    },
-    slideChange: function () {
-      updateNavigationButtons(this);
-    },
-  },
 });
