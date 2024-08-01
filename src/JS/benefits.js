@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const benefitsLinkToScroll = document.querySelectorAll(
-    '.benefits-link-to-scroll'
+    '.benefits-link-to-scroll a'
   );
 
   benefitsLinkToScroll.forEach(link => {
