@@ -1,6 +1,6 @@
 .about-container-swiper {
   display: flex;
-  margin-bottom: 164px;
+  /* margin-bottom: 164px; */
 }
 
 .about-me-swiper {
@@ -57,6 +57,9 @@
   fill: #444;
 }
 
+@media screen and (max-width: 374px) {
+}
+
 @media screen and (min-width: 768px) {
   /* .about-container-swiper {
     margin-top: 64px;
@@ -101,4 +104,11 @@
   .swiper-button-wrap {
     margin-left: 72px;
   }
+
+  .about-container-swiper {
+    margin-bottom: 164px;
+  }
+}
+
+.andy {
 }
