@@ -120,6 +120,8 @@
   width: 24px;
   height: 24px;
   transition: stroke 250ms linear;
+  fill: transparent;
+  stroke: #fafafa;
 }
 
 @media screen and (min-width: 375px) {
