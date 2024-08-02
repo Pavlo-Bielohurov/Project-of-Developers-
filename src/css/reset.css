@@ -72,3 +72,8 @@ img {
     padding: 0 100px;
   }
 }
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
